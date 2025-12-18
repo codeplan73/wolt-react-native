@@ -1,14 +1,29 @@
-import React from "react";
-import { StyleSheet, Text, View } from "react-native";
+// import { Stack } from "@/components/Stack";
+// import { Colors } from "@/constants/theme";
+// import { Ionicons } from "@expo/vector-icons";
+import { useRouter } from "expo-router";
+import {
+  Button,
+  StyleSheet,
+  Text,
+  // TouchableOpacity,
+  View,
+} from "react-native";
+// import Transition from "react-native-screen-transitions";
+import useUserStore from "@/hooks/use-userstore";
 
-const index = () => {
+const Index = () => {
+  const router = useRouter();
+  const { setIsGuest } = useUserStore();
+
   return (
     <View>
-      <Text>index</Text>
+      <Text>My Inside Page</Text>
+      <Button title="Go Login" onPress={() => setIsGuest(false)} />
     </View>
   );
 };
 
-export default index;
+export default Index;
 
 const styles = StyleSheet.create({});
