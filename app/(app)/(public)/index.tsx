@@ -6,7 +6,7 @@ import { Colors, Fonts } from "@/constants/theme";
 import { Link } from "expo-router";
 import {
   Image,
-  // Linking,
+  Linking,
   StyleSheet,
   Text,
   TouchableOpacity,
@@ -15,6 +15,10 @@ import {
 import Animated, { FadeInDown } from "react-native-reanimated";
 
 const Index = () => {
+  const openWebBrowser = () => {
+    Linking.openURL("https://galaxies.dev");
+  };
+
   return (
     <View style={styles.container}>
       <View style={styles.infiniteScrollContainer}></View>
@@ -43,6 +47,19 @@ const Index = () => {
             </Link>
           </Animated.View>
         </View>
+
+        <Animated.View
+          style={styles.privacyContainer}
+          entering={FadeInDown.delay(400)}
+        >
+          <Text style={styles.privacyText}>
+            Please visit{" "}
+            <Text style={styles.privacyLink} onPress={openWebBrowser}>
+              Wolt Privacy Statement
+            </Text>{" "}
+            to learn about personal data processing at Wolt.
+          </Text>
+        </Animated.View>
       </View>
     </View>
   );
