@@ -1,14 +1,14 @@
-import { Colors } from '@/constants/theme';
-import Ionicons from '@expo/vector-icons/Ionicons';
-import { Link } from 'expo-router';
-import { StyleSheet, Text, TouchableOpacity, View } from 'react-native';
+import { Colors } from "@/constants/theme";
+import Ionicons from "@expo/vector-icons/Ionicons";
+import { Link } from "expo-router";
+import { StyleSheet, Text, TouchableOpacity, View } from "react-native";
 import Animated, {
   Extrapolation,
   interpolate,
   SharedValue,
   useAnimatedStyle,
-} from 'react-native-reanimated';
-import { useSafeAreaInsets } from 'react-native-safe-area-context';
+} from "react-native-reanimated";
+import { useSafeAreaInsets } from "react-native-safe-area-context";
 
 interface RestaurantHeaderProps {
   title: string;
@@ -77,10 +77,12 @@ const RestaurantHeader = ({ title, scrollOffset }: RestaurantHeaderProps) => {
   });
 
   return (
-    <Animated.View style={[styles.headerContainer, shadowStyle, { paddingTop: insets.top }]}>
+    <Animated.View
+      style={[styles.headerContainer, shadowStyle, { paddingTop: insets.top }]}
+    >
       {/* Header 1 */}
       <Animated.View style={[styles.header1, header1Style]}>
-        <Link href={'/(app)/(auth)/(modal)/location'} asChild>
+        <Link href={"/(app)/(auth)/(modal)/location"} asChild>
           <TouchableOpacity style={styles.locationButton}>
             <View style={styles.locationButtonIcon}>
               <Ionicons name="business-outline" size={16} />
@@ -91,12 +93,12 @@ const RestaurantHeader = ({ title, scrollOffset }: RestaurantHeaderProps) => {
         </Link>
 
         <View style={styles.rightIcons}>
-          <Link href={'/(app)/(auth)/(modal)/filter'} asChild>
+          <Link href={"/(app)/(auth)/(modal)/filter"} asChild>
             <TouchableOpacity style={styles.iconButton}>
               <Ionicons name="filter" size={20} />
             </TouchableOpacity>
           </Link>
-          <Link href={'/(app)/(auth)/(modal)/map'} asChild>
+          <Link href={"/(app)/(auth)/(modal)/location"} asChild>
             <TouchableOpacity style={styles.iconButton}>
               <Ionicons name="map-outline" size={20} />
             </TouchableOpacity>
@@ -108,7 +110,7 @@ const RestaurantHeader = ({ title, scrollOffset }: RestaurantHeaderProps) => {
       <Animated.View style={[styles.header2, header2Style]}>
         <View style={styles.centerContent}>
           <Text style={styles.titleSmall}>{title}</Text>
-          <Link href={'/(app)/(auth)/(modal)/location'} asChild>
+          <Link href={"/(app)/(auth)/(modal)/location"} asChild>
             <TouchableOpacity style={styles.locationSmall}>
               <Text style={styles.locationSmallText}>Münster</Text>
               <Ionicons name="chevron-down" size={14} />
@@ -116,7 +118,7 @@ const RestaurantHeader = ({ title, scrollOffset }: RestaurantHeaderProps) => {
           </Link>
         </View>
         <View style={styles.rightIcons}>
-          <Link href={'/(app)/(auth)/(modal)/filter'} asChild>
+          <Link href={"/(app)/(auth)/(modal)/filter"} asChild>
             <TouchableOpacity style={styles.iconButton}>
               <Ionicons name="filter" size={20} />
             </TouchableOpacity>
@@ -129,14 +131,14 @@ const RestaurantHeader = ({ title, scrollOffset }: RestaurantHeaderProps) => {
 
 const styles = StyleSheet.create({
   headerContainer: {
-    position: 'absolute',
+    position: "absolute",
     top: 0,
     left: 0,
     right: 0,
-    backgroundColor: '#fff',
+    backgroundColor: "#fff",
     zIndex: 100,
     // boxShadow: '0px 2px 4px -2px rgba(0, 0, 0, 0.2)',
-    shadowColor: '#000',
+    shadowColor: "#000",
     shadowOffset: { width: 0, height: 2 },
     shadowRadius: 4,
   },
@@ -144,28 +146,28 @@ const styles = StyleSheet.create({
     paddingHorizontal: 16,
     paddingTop: 8,
     paddingBottom: 12,
-    flexDirection: 'row',
-    justifyContent: 'space-between',
-    alignItems: 'center',
+    flexDirection: "row",
+    justifyContent: "space-between",
+    alignItems: "center",
   },
   header2: {
-    position: 'absolute',
+    position: "absolute",
     bottom: 0,
     left: 0,
     right: 0,
     paddingHorizontal: 16,
     paddingVertical: 12,
-    flexDirection: 'row',
-    justifyContent: 'space-between',
-    alignItems: 'center',
+    flexDirection: "row",
+    justifyContent: "space-between",
+    alignItems: "center",
   },
   locationText: {
     fontSize: 14,
-    fontWeight: '600',
+    fontWeight: "600",
   },
   locationButton: {
-    flexDirection: 'row',
-    alignItems: 'center',
+    flexDirection: "row",
+    alignItems: "center",
     borderRadius: 20,
     gap: 6,
   },
@@ -175,7 +177,7 @@ const styles = StyleSheet.create({
     padding: 10,
   },
   rightIcons: {
-    flexDirection: 'row',
+    flexDirection: "row",
     gap: 8,
   },
   iconButton: {
@@ -183,12 +185,12 @@ const styles = StyleSheet.create({
     height: 40,
     backgroundColor: Colors.light,
     borderRadius: 20,
-    alignItems: 'center',
-    justifyContent: 'center',
+    alignItems: "center",
+    justifyContent: "center",
   },
   centerContent: {
     flex: 1,
-    alignItems: 'center',
+    alignItems: "center",
     paddingLeft: 40,
   },
   titleSmall: {
@@ -197,8 +199,8 @@ const styles = StyleSheet.create({
     marginBottom: 2,
   },
   locationSmall: {
-    flexDirection: 'row',
-    alignItems: 'center',
+    flexDirection: "row",
+    alignItems: "center",
     gap: 2,
   },
   locationSmallText: {

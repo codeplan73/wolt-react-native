@@ -1,10 +1,12 @@
-import { Stack } from "expo-router";
+import { Stack, useRouter } from "expo-router";
 // import { Stack } from "@/components/Stack";
-// import { Colors } from "@/constants/theme";
-// import { Ionicons } from "@expo/vector-icons";
+import { Colors } from "@/constants/theme";
+import { Ionicons } from "@expo/vector-icons";
+import { TouchableOpacity } from "react-native";
 // import Transition from "react-native-screen-transitions";
 
 const Layout = () => {
+  const router = useRouter();
   return (
     <Stack>
       {/* <Stack.Screen name="index" options={{ title: "Feed" }} /> */}
@@ -14,13 +16,13 @@ const Layout = () => {
         options={{
           ...Transition.presets.DraggableCard(),
         }}
-      />
-      <Stack.Screen
+      /> */}
+      {/* <Stack.Screen
         name="(modal)/map"
         options={{
           ...Transition.presets.SharedAppleMusic(),
         }}
-      />
+      /> */}
       <Stack.Screen
         name="(modal)/location"
         options={{
@@ -28,7 +30,7 @@ const Layout = () => {
           sheetAllowedDetents: [0.7],
           title: "",
           headerShadowVisible: false,
-          sheetCornerRadius: 16,
+          sheetCornerRadius: 12,
           sheetGrabberVisible: true,
           headerRight: () => (
             <TouchableOpacity
@@ -43,8 +45,8 @@ const Layout = () => {
             </TouchableOpacity>
           ),
         }}
-      /> */}
-      {/* <Stack.Screen
+      />
+      <Stack.Screen
         name="(modal)/filter"
         options={{
           presentation: "formSheet",
@@ -70,7 +72,7 @@ const Layout = () => {
           ),
         }}
       />
-      <Stack.Screen
+      {/* <Stack.Screen
         name="(modal)/(menu)/[id]"
         options={{
           presentation: "formSheet",
@@ -85,14 +87,14 @@ const Layout = () => {
             backgroundColor: "#fff",
           },
         }}
-      />
-      <Stack.Screen
+      /> */}
+      {/* <Stack.Screen
         name="order"
         options={{
           enableTransitions: true,
           ...Transition.presets.SharedXImage(),
         }}
-      /> */}
+      />   */}
     </Stack>
   );
 };

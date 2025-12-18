@@ -38,7 +38,7 @@ const RestaurantList = () => {
     <>
       {restaurants?.map((item) => (
         <View key={item.id}>
-          <Link href={`/(modal)/(restaurant)/${item.id}`} asChild>
+          <Link href={`/(app)/(auth)/(modal)/restaurant/${item.id}`} asChild>
             <TouchableOpacity style={styles.card}>
               <Image source={item.image!} style={styles.image} />
               <View style={styles.info}>
