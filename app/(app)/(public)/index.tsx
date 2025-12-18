@@ -1,10 +1,17 @@
-// import AppleAuthButton from "@/components/auth/AppleAuthButton";
-// import GoogleAuthButton from "@/components/auth/GoogleAuthButton";
+import AppleAuthButton from "@/components/auth/AppleAuthButton";
+import GoogleAuthButton from "@/components/auth/GoogleAuthButton";
 // import SmoothInfiniteScroll from "@/components/SmoothInfiniteScroll";
 import { Colors, Fonts } from "@/constants/theme";
 // import { LinearGradient } from "expo-linear-gradient";
 import { Link } from "expo-router";
-import { Image, StyleSheet, Text, TouchableOpacity, View } from "react-native";
+import {
+  Image,
+  // Linking,
+  StyleSheet,
+  Text,
+  TouchableOpacity,
+  View,
+} from "react-native";
 import Animated, { FadeInDown } from "react-native-reanimated";
 
 const Index = () => {
@@ -22,12 +29,12 @@ const Index = () => {
 
         {/* Login buttons */}
         <View style={styles.buttonContainer}>
-          {/* <Animated.View entering={FadeInDown.delay(100)}>
+          <Animated.View entering={FadeInDown.delay(100)}>
             <AppleAuthButton />
           </Animated.View>
           <Animated.View entering={FadeInDown.delay(200)}>
             <GoogleAuthButton />
-          </Animated.View> */}
+          </Animated.View>
           <Animated.View entering={FadeInDown.delay(300)}>
             <Link href={"/(app)/(public)/other-options"} asChild>
               <TouchableOpacity style={styles.otherButton}>
@@ -95,7 +102,7 @@ const styles = StyleSheet.create({
     lineHeight: 18,
   },
   privacyLink: {
-    color: "#4285F4",
+    color: Colors.btnBg,
     textDecorationLine: "underline",
   },
   infiniteScrollContainer: {
