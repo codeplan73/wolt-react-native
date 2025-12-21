@@ -11,7 +11,7 @@ const Layout = () => {
     <Stack>
       {/* <Stack.Screen name="index" options={{ title: "Feed" }} /> */}
       <Stack.Screen name="(tabs)" options={{ headerShown: false }} />
-      <Stack.Screen name="(tabs)/map" options={{ headerShown: false }} />
+      <Stack.Screen name="(modal)/map" options={{ headerShown: false }} />
       {/* <Stack.Screen
         name="(modal)/(restaurant)/[id]"
         options={{
