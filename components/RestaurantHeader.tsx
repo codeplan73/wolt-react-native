@@ -98,7 +98,7 @@ const RestaurantHeader = ({ title, scrollOffset }: RestaurantHeaderProps) => {
               <Ionicons name="filter" size={20} />
             </TouchableOpacity>
           </Link>
-          <Link href={"/(app)/(auth)/(modal)/location"} asChild>
+          <Link href={"/(app)/(auth)/(modal)/map"} asChild>
             <TouchableOpacity style={styles.iconButton}>
               <Ionicons name="map-outline" size={20} />
             </TouchableOpacity>
